@@ -1,0 +1,20 @@
+Task1 Code:
+val rdd = sc.textFile("/home/acadgild/assignment_17.1/wordcount_input_file")
+val line_count = rdd.count
+println(line_count)
+
+Task2 Code:
+
+val rdd = sc.textFile("/home/acadgild/assignment_17.1/wordcount_input_file")
+val rdd_words = rdd.flatMap(line=> line.split(" "))
+rdd_words.collect()
+val word_count = rdd_words.count
+println(word_count)
+
+
+Task3 Code:
+val rdd_hyphen = sc.textFile("/home/acadgild/assignment_17.1/wordcount_hyphen_separated")
+val rdd_hyphen_words = rdd_hyphen.flatMap(line=> line.split("-"))
+rdd_hyphen_words.collect
+val word_hyphen_separator_count = rdd_hyphen_words.count
+println(word_hyphen_separator_count)
